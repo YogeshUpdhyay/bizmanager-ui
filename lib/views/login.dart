@@ -1,4 +1,4 @@
-import 'package:bizmanager/views/components/textfield.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
@@ -7,12 +7,18 @@ class Login extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       body: Center(
-        child: Text(
-          "bizmanger.co",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 35,
-            fontFamily: "OpenSans"
+        child: SizedBox(
+          width: 250.0,
+          child: DefaultTextStyle(
+            style: const TextStyle(
+              fontSize: 36.0,
+              fontFamily: 'OpenSans',
+            ),
+            child: AnimatedTextKit(
+              animatedTexts: [
+                TypewriterAnimatedText('bizmanager.co'),
+              ],
+            ),
           ),
         ),
       ),
