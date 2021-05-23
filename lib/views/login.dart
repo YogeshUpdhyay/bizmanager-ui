@@ -1,10 +1,19 @@
 import 'package:bizmanager/views/components/textfield.dart';
 import 'package:flutter/material.dart';
 
+class MainView extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Login();
+  }
+}
+
 class Login extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: Colors.deepOrangeAccent,
       body: Container(
@@ -27,9 +36,9 @@ class Login extends StatelessWidget {
               height: 10,
             ),
             TextFieldComponent(
-              prefixIcon: Icon(Icons.email), 
-              labelText: "Email", 
-              obsText: false
+              prefixIcon: Icon(Icons.password_rounded), 
+              labelText: "Password", 
+              obsText: true
             ),
             SizedBox(
               height: 10,
