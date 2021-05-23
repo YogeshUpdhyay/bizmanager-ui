@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'bizmanager',
       theme: ThemeData(
-        primarySwatch: Colors.grey
+        primarySwatch: Colors.blue,
       ),
       // initialRoute: "/",
       // routes: {
