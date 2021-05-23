@@ -4,24 +4,21 @@ import 'package:flutter/material.dart';
 class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Center(
-        child: SizedBox(
-          width: 250.0,
-          child: DefaultTextStyle(
-            style: const TextStyle(
-              fontSize: 36.0,
-              fontFamily: 'OpenSans',
-            ),
-            child: AnimatedTextKit(
-              animatedTexts: [
-                TypewriterAnimatedText('bizmanager.co'),
-              ],
-            ),
-          ),
-        ),
-      ),
+      body: Stack(
+        children: [
+          Image.asset("assets/images/backdrop_upper.gif"),
+          Center(
+            child: Image.asset(
+              "assets/images/logo.png",
+              fit: BoxFit.cover,
+              width: size.width*0.8,
+            )
+          )
+        ],
+      )
     );
   }
 }
