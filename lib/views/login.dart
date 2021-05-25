@@ -23,6 +23,7 @@ class Login extends StatelessWidget {
           children: [
             SizedBox(
               width: size.width*0.6,
+              height: size.height*0.3,
               child: Image.asset(
                 "assets/images/logo.png"
               ),
