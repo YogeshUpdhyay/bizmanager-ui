@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TextFieldComponent extends StatelessWidget {
-  final Icon prefixIcon;
+  final IconData prefixIcon;
   final String labelText;
   final bool obsText;
 
@@ -17,12 +17,26 @@ class TextFieldComponent extends StatelessWidget {
     return TextField(
       decoration: InputDecoration(
         labelText: this.labelText,
-        prefixIcon: this.prefixIcon,
+        prefixIcon: Icon(this.prefixIcon, color: Colors.black),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+          borderRadius: BorderRadius.all(Radius.circular(16.0)),
+          borderSide: BorderSide(color: Colors.black)
+        ),
+        labelStyle: TextStyle(
+            color: Colors.black
+          ),
+        floatingLabelBehavior: FloatingLabelBehavior.never,
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(16.0)),
+          borderSide: BorderSide(color: Colors.black)
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(16.0)),
+          borderSide: BorderSide(color: Colors.black)
         ),
       ),
       obscureText: this.obsText,
+      cursorColor: Colors.black,
     );
   }
 

@@ -28,7 +28,7 @@ class Login extends StatelessWidget {
               ),
             ),
             TextFieldComponent(
-              prefixIcon: Icon(Icons.email), 
+              prefixIcon: Icons.email, 
               labelText: "Email", 
               obsText: false
             ),
@@ -36,7 +36,7 @@ class Login extends StatelessWidget {
               height: 10,
             ),
             TextFieldComponent(
-              prefixIcon: Icon(Icons.password_rounded), 
+              prefixIcon: Icons.password_rounded, 
               labelText: "Password", 
               obsText: true
             ),

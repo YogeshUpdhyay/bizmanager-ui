@@ -13,6 +13,15 @@ class MyApp extends StatelessWidget {
       title: 'bizmanager',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        // inputDecorationTheme: InputDecorationTheme(
+        //   labelStyle: TextStyle(
+        //     color: Colors.black
+        //   ),
+        //   floatingLabelBehavior: FloatingLabelBehavior.never,
+        //   border: OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
+        //   enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
+        //   focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
+        // )
       ),
       // initialRoute: "/",
       // routes: {
