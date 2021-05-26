@@ -9,7 +9,15 @@ class MainView extends StatelessWidget {
   }
 }
 
-class Buisness extends StatelessWidget {
+class Buisness extends StatefulWidget {
+  @override
+  _BuisnessState createState() => _BuisnessState();
+}
+
+class _BuisnessState extends State<Buisness> {
+
+  int _currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
 
@@ -22,18 +30,41 @@ class Buisness extends StatelessWidget {
         preferredSize: Size(size.width, size.height*0.07),
         child: AppBarComponent(),
       ),
-      bottomNavigationBar: BottomAppBar(
-        elevation: 20.0,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            IconButton(onPressed: () => print("Party"), icon: Icon(Icons.add_business)),
-            IconButton(onPressed: () => print("Add Sales"), icon: Icon(Icons.note_add)),
-            IconButton(onPressed: () => print("Add Purchase"), icon: Icon(Icons.request_quote)),
-            IconButton(onPressed: () => print("Accounts"), icon: Icon(Icons.groups))
-          ],
+      bottomNavigationBar: bottomBarComponent(),
+    );
+  }
+
+  BottomNavigationBar bottomBarComponent() {
+    return BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
+      currentIndex: _currentIndex,
+      backgroundColor: Colors.white,
+      selectedItemColor: Colors.grey,
+      unselectedItemColor: Colors.black,
+      selectedFontSize: 14,
+      unselectedFontSize: 14,
+      onTap: (value) {
+        // Respond to item press.
+        setState(() => _currentIndex = value);
+      },
+      items: [
+        BottomNavigationBarItem(
+          label: 'Business',
+          icon: Icon(Icons.add_business),
         ),
-      ),
+        BottomNavigationBarItem(
+          label: 'Purchases',
+          icon: Icon(Icons.request_quote),
+        ),
+        BottomNavigationBarItem(
+          label: 'Sales',
+          icon: Icon(Icons.description),
+        ),
+        BottomNavigationBarItem(
+          label: 'Accounts',
+          icon: Icon(Icons.groups),
+        ),
+      ],
     );
   }
 }
@@ -47,7 +78,7 @@ class AppBarComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(
-        "Buisness",
+        "Business",
         style: TextStyle(
           color: Colors.black
         ),
