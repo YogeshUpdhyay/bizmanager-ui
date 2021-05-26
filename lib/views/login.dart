@@ -17,12 +17,43 @@ class Buisness extends StatelessWidget {
 
     return Scaffold(
       drawer: Drawer(),
-      appBar: AppBar(
-        title: Text(
-          "Business"
-        ),
-        backgroundColor: Colors.transparent,
+      drawerScrimColor: Colors.transparent,
+      appBar: PreferredSize(
+        preferredSize: Size(size.width, size.height*0.07),
+        child: AppBarComponent(),
       ),
+      bottomNavigationBar: BottomAppBar(
+        elevation: 20.0,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            IconButton(onPressed: () => print("Party"), icon: Icon(Icons.add_business)),
+            IconButton(onPressed: () => print("Add Sales"), icon: Icon(Icons.note_add)),
+            IconButton(onPressed: () => print("Add Purchase"), icon: Icon(Icons.request_quote)),
+            IconButton(onPressed: () => print("Accounts"), icon: Icon(Icons.groups))
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class AppBarComponent extends StatelessWidget {
+  const AppBarComponent({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      title: Text(
+        "Buisness",
+        style: TextStyle(
+          color: Colors.black
+        ),
+      ),
+      backgroundColor: Colors.white,
+      iconTheme: IconThemeData(color: Colors.black)
     );
   }
 }
@@ -205,3 +236,4 @@ class Landing extends StatelessWidget {
     );
   }
 }
+
