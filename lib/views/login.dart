@@ -5,7 +5,25 @@ import 'dart:ui' as ui;
 class MainView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Register();
+    return Buisness();
+  }
+}
+
+class Buisness extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+
+    final size = MediaQuery.of(context).size;
+
+    return Scaffold(
+      drawer: Drawer(),
+      appBar: AppBar(
+        title: Text(
+          "Business"
+        ),
+        backgroundColor: Colors.transparent,
+      ),
+    );
   }
 }
 
