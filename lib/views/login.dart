@@ -16,25 +16,88 @@ class Buisness extends StatefulWidget {
 
 class _BuisnessState extends State<Buisness> {
 
-  int _currentIndex = 0;
-
   @override
   Widget build(BuildContext context) {
 
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      drawer: Drawer(),
+      drawer: DrawerComponent(),
       drawerScrimColor: Colors.transparent,
       appBar: PreferredSize(
         preferredSize: Size(size.width, size.height*0.07),
         child: AppBarComponent(),
       ),
-      bottomNavigationBar: bottomBarComponent(),
+      bottomNavigationBar: BottomAppBarComponent(),
     );
   }
 
-  BottomNavigationBar bottomBarComponent() {
+}
+
+class DrawerComponent extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: Column(
+        children: [
+          DrawerHeader(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                CircleAvatar(
+                  radius: 30.0,
+                  backgroundImage: NetworkImage("https://cdn.icon-icons.com/icons2/1736/PNG/512/4043260-avatar-male-man-portrait_113269.png")
+                ),
+                SizedBox(height: 10.0,),
+                Text(
+                  "Yogesh Upadhyay", 
+                  style: TextStyle(
+                    fontFamily: "OpenSans", 
+                    fontWeight: FontWeight.bold, 
+                    fontSize: 20
+                  ),
+                ),
+                SizedBox(height: 5.0,),
+                Text(
+                  "yogeshh2021@gmail.com", 
+                  style: TextStyle(
+                    fontFamily: "OpenSans", 
+                    color: Colors.black.withOpacity(0.8)
+                  )
+                )
+              ],
+            )
+          ),
+          ListTile(
+            leading: Icon(Icons.settings),
+            title: Text("Settings"),
+            onTap: () => print("settings"),
+          ),
+          Text(
+            "Business",
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class BottomAppBarComponent extends StatefulWidget {
+  @override
+   BottomAppBarComponentState createState() =>  BottomAppBarComponentState();
+}
+
+class  BottomAppBarComponentState extends State <BottomAppBarComponent> {
+
+  int _currentIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
       currentIndex: _currentIndex,
