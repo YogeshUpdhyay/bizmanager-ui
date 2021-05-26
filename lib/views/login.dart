@@ -21,7 +21,7 @@ class RPSCustomPainter extends CustomPainter {
   path_0.close();
 
   Paint paint_0_fill = Paint()..style=PaintingStyle.fill;
-  paint_0_fill.color = Colors.black;
+  paint_0_fill.color = Colors.yellow;
   canvas.drawPath(path_0,paint_0_fill);
 
 }
@@ -38,14 +38,12 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
-    final WIDTH = size.width;
-
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
         children: [
           CustomPaint(
-              size: Size(WIDTH, (size.height*0.4).toDouble()), //You can Replace [WIDTH] with your desired width for Custom Paint and height will be calculated automatically
+              size: Size(size.width, (size.height*0.4).toDouble()), //You can Replace [WIDTH] with your desired width for Custom Paint and height will be calculated automatically
               painter: RPSCustomPainter(),
           ),
           Container(
@@ -83,7 +81,12 @@ class Login extends StatelessWidget {
                   elevation: 10.0,
 
                 ),
-                SizedBox(height: 20,),
+                SizedBox(height: 40,),
+                Divider(color: Colors.black, thickness: 2,),
+                TextButton(
+                  onPressed: () => Navigator.pushReplacementNamed(context, "/register"), 
+                  child: Text("Don't have an account? Register")
+                )
               ],
             ),
           )
