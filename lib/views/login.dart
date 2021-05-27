@@ -1,16 +1,6 @@
 import 'package:bizmanager/views/components/textfield.dart';
-import 'package:bizmanager/views/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'components/customPaint.dart';
-
-
-// test component
-class MainView extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Business();
-  }
-}
 
 class Login extends StatelessWidget {
 
@@ -23,7 +13,7 @@ class Login extends StatelessWidget {
       body: Stack(
         children: [
           CustomPaint(
-              size: Size(size.width, (size.height*0.4).toDouble()), //You can Replace [WIDTH] with your desired width for Custom Paint and height will be calculated automatically
+              size: Size(size.width, (size.height*0.4).toDouble()),
               painter: RPSCustomPainter(),
           ),
           Container(

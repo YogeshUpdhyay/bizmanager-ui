@@ -1,4 +1,4 @@
-import 'package:bizmanager/views/login.dart';
+import 'package:bizmanager/views/mainview.dart';
 import 'package:flutter/material.dart';
 
 void main() {
