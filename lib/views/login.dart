@@ -26,7 +26,7 @@ class _BuisnessState extends State<Buisness> {
       drawerScrimColor: Colors.transparent,
       appBar: PreferredSize(
         preferredSize: Size(size.width, size.height*0.07),
-        child: AppBarComponent(),
+        child: AppBarComponent(businessName: "Bajrang Coal Depot",),
       ),
       bottomNavigationBar: BottomAppBarComponent(),
     );
@@ -34,7 +34,23 @@ class _BuisnessState extends State<Buisness> {
 
 }
 
+class UserModel {
+  final userName;
+  final email;
+  final avatar;
+
+  UserModel(this.userName, this.email, this.avatar);
+
+}
+
 class DrawerComponent extends StatelessWidget {
+
+  // UserModel getCurrentUser () {
+  //   return null;
+  // }
+
+  // final currentUser = getCurrentUser();
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -133,15 +149,16 @@ class  BottomAppBarComponentState extends State <BottomAppBarComponent> {
 }
 
 class AppBarComponent extends StatelessWidget {
-  const AppBarComponent({
-    Key? key,
-  }) : super(key: key);
 
+  final businessName;
+
+  const AppBarComponent({Key? key, this.businessName}) : super(key: key);
+  
   @override
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(
-        "Business",
+        businessName,
         style: TextStyle(
           color: Colors.black
         ),
