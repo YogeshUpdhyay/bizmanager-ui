@@ -36,7 +36,7 @@ class TextFieldComponent extends StatelessWidget {
         ),
       ),
       obscureText: this.obsText,
-      cursorColor: Colors.black,
+      cursorColor: Colors.black
     );
   }
 
