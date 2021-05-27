@@ -77,16 +77,88 @@ class _BusinessState extends State<Business> {
                     onPressed: () => showModalBottomSheet(
                       context: context, 
                       builder: (builder) {
-                        return Text("This is business");
+                        return AddEmployee();
                       }
                     ), 
                     icon: Icon(Icons.add_box_rounded)
                   )
                 ],
               ),
+              ListTile(
+                leading: Icon(Icons.person),
+                title: Text(
+                  "John Doe"
+                ),
+                trailing: IconButton(
+                  icon: Icon(Icons.delete),
+                  onPressed: () => print("Employee deleted"),
+                ),
+                onTap: () => print("Employee Profile"),
+              ),
+              ListTile(
+                leading: Icon(Icons.person),
+                title: Text(
+                  "John Doe"
+                ),
+                trailing: IconButton(
+                  icon: Icon(Icons.delete),
+                  onPressed: () => print("Employee deleted"),
+                ),
+                onTap: () => print("Employee Profile"),
+              ),
+              ListTile(
+                leading: Icon(Icons.person),
+                title: Text(
+                  "John Doe"
+                ),
+                trailing: IconButton(
+                  icon: Icon(Icons.delete),
+                  onPressed: () => print("Employee deleted"),
+                ),
+                onTap: () => print("Employee Profile"),
+              ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class AddEmployee extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+
+    final size = MediaQuery.of(context).size;
+
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: size.width*0.05),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(height: 10.0,),
+          Text(
+            "Find User",
+            style: TextStyle(
+              fontFamily: "OpenSans",
+              fontSize: 20,
+              fontWeight: FontWeight.w100
+            ),
+          ),
+          SizedBox(height: 10.0,),
+          TextFieldComponent(
+            prefixIcon: Icons.search, 
+            labelText: "Username/Email", 
+            obsText: false,
+          ),
+          SizedBox(height: 10.0,),
+          ListTile(
+            title: Text(
+              "John Doe"
+            ),
+            onTap: () => print("Added Employee"),
+          )
+        ],
       ),
     );
   }
@@ -115,7 +187,7 @@ class BusinessCard extends StatelessWidget {
 
     return Card(
       shadowColor: Colors.grey[70],
-      elevation: 20.0,
+      elevation: 10.0,
       color: Colors.black,
       child: Container(
         height: size.height*0.3,
@@ -127,6 +199,8 @@ class BusinessCard extends StatelessWidget {
           )
         ),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -149,7 +223,7 @@ class BusinessCard extends StatelessWidget {
                       fontFamily: "OpenSans",
                       color: Colors.white,
                     ),
-                    maxLines: 3,
+                    maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
@@ -168,6 +242,14 @@ class BusinessCard extends StatelessWidget {
                   ),
                 )
               ],
+            ),
+            Container(
+              child: CircleAvatar(
+                radius: 35,
+                backgroundImage: NetworkImage(
+                  businessLogo
+                )
+              ),
             )
           ],
         ),
