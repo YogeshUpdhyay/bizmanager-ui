@@ -63,7 +63,36 @@ class DrawerComponent extends StatelessWidget {
       drawerElements.addAll([
         ListTile(
           leading: Icon(Icons.business_center_rounded),
-          title: Text(businesses[i].businessName, style: TextStyle(fontSize: 16, fontFamily: "OpenSans"))
+          title: Text(businesses[i].businessName, style: TextStyle(fontSize: 16, fontFamily: "OpenSans")),
+          trailing: PopupMenuButton(
+            onSelected: (Map<String, dynamic> action) {
+              print(action);
+            },
+            itemBuilder: (BuildContext context) => [
+              PopupMenuItem(
+                child: Text("Manage Employees"), 
+                value: {
+                  'type': 'manage',
+                  'id': businesses[i].id
+                }
+              ),
+              PopupMenuItem(
+                child: Text("Edit Details"), 
+                value: {
+                  'type': 'edit-busi',
+                  'id': businesses[i].id
+                }
+              ),
+              PopupMenuItem(
+                child: Text("Delete"), 
+                value: {
+                  'type': 'delete',
+                  'id': businesses[i].id
+                }
+              ),
+            ], 
+          ),
+          onTap: () => print(businesses[i].id),
         ),
       ]);
     }
@@ -80,6 +109,7 @@ class DrawerComponent extends StatelessWidget {
             fontSize: 16
           ),
         ),
+        onTap: () => print("Add new business"),
       )
     ]);    
 

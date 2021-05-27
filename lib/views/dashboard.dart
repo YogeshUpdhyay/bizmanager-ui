@@ -3,12 +3,12 @@ import 'components/appbar.dart';
 import 'components/bottomAppBar.dart';
 import 'components/drawer.dart';
 
-class Business extends StatefulWidget {
+class Dashboard extends StatefulWidget {
   @override
-  _BusinessState createState() => _BusinessState();
+  _DashboardState createState() => _DashboardState();
 }
 
-class _BusinessState extends State<Business> {
+class _DashboardState extends State<Dashboard> {
 
   @override
   Widget build(BuildContext context) {
