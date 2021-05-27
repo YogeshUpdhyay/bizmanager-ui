@@ -4,10 +4,7 @@
         "businessName": "Bajrang Coal Depot",
         "businessAddress": "Plot No. 3, Street, City, PIN: XXX XXX",
         "businessEmail": "bcd@bcd.com",
-        "businessNos": [
-            "022 1234 5698",
-            "+91 12365 12365"
-        ],
+        "businessNos": "022 1234 5698",
         "businessLogo": "https://i1.wp.com/realestatebossmamas.com/wp-content/uploads/2018/02/logo-placeholder-1.png?w=200",
         "businessGSTIN": "456789123" 
     },
