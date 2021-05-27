@@ -76,31 +76,28 @@ class _BusinessState extends State<Business> {
   }
 }
 
-// class BusinessCard extends StatelessWidget {
+class BusinessCard extends StatelessWidget {
 
-//   var businessName = "Business Name";
-//   var businessAddress = "Bussiness Address";
-//   var businessEmail = "busi@busi.com";
-//   var businessNos = [
-//     "022 1234 5698",
-//     "+91 12365 12365"
-//   ];
-//   var businessLogo = null;
-//   var businessPinCode = "XXX XXX";
+  final businessName;
+  final businessAddress;
+  final businessEmail ;
+  final businessNos;
+  final businessLogo;
 
-//   BusinessCard({
-//     this.businessName, 
-//     this.businessAddress, 
-//     this.businessEmail, 
-//     this.businessNos, 
-//     this.businessLogo
-//   })
+  BusinessCard({
+    this.businessName, 
+    this.businessAddress, 
+    this.businessEmail, 
+    this.businessNos, 
+    this.businessLogo
+  });
 
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      shadowColor: Colors.grey[70],
+      elevation: 10.0,
+    );
+  }
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-      
-//     );
-//   }
-// }
+}
