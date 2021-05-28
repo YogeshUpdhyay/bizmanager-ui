@@ -1,28 +1,27 @@
 import 'package:flutter/material.dart';
 
-class BottomAppBarComponent extends StatefulWidget {
-  @override
-   BottomAppBarComponentState createState() =>  BottomAppBarComponentState();
-}
+class BottomAppBarComponent extends StatelessWidget {
 
-class  BottomAppBarComponentState extends State <BottomAppBarComponent> {
+  final currentIndex;
+  final onChangeFunc;
 
-  int _currentIndex = 0;
+  const BottomAppBarComponent({
+    Key? key, 
+    this.currentIndex, 
+    this.onChangeFunc
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
-      currentIndex: _currentIndex,
+      currentIndex: currentIndex,
       backgroundColor: Colors.white,
       selectedItemColor: Colors.grey,
       unselectedItemColor: Colors.black,
       selectedFontSize: 14,
       unselectedFontSize: 14,
-      onTap: (value) {
-        // Respond to item press.
-        setState(() => _currentIndex = value);
-      },
+      onTap: onChangeFunc,
       items: [
         BottomNavigationBarItem(
           label: 'Business',
