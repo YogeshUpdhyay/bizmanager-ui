@@ -1,5 +1,4 @@
 import 'package:bizmanager/views/accounts.dart';
-import 'package:bizmanager/views/business.dart';
 import 'package:bizmanager/views/parties.dart';
 import 'package:bizmanager/views/purchase.dart';
 import 'package:bizmanager/views/sale.dart';
