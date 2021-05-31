@@ -1,5 +1,7 @@
 import 'package:bizmanager/controller/parties.dart';
+import 'package:bizmanager/views/components/textfield.dart';
 import 'package:flutter/material.dart';
+import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 class Sales extends StatefulWidget {
 
@@ -9,13 +11,18 @@ class Sales extends StatefulWidget {
 
 class _SalesState extends State<Sales> {
 
-  // final parties = getParties();
   var chosenValue;
 
   void _changeFunc(value) {
     setState(() {
       chosenValue = value;
     });
+  }
+
+  void _onSelectionChanged(DateRangePickerSelectionChangedArgs args) {
+    // TODO: implement your code here
+    // args.value;
+    print("${args.value.startDate} to ${args.value.endDate}");
   }
 
   @override
@@ -31,10 +38,34 @@ class _SalesState extends State<Sales> {
           children: [
             SizedBox(height: 10.0,),
             DropDownComponent(changeFunc: _changeFunc, chosenValue: chosenValue,),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.calendar_today)
+            SizedBox(height: 10.0,),
+            // TextFieldComponent(prefixIcon: Icons.date_range, labelText: labelText, obsText: obsText)
+            Row(
+              children: [
+                Text("Start Date"),
+                Icon(Icons.arrow_right),
+                Text("End Date"),
+                IconButton(
+                  onPressed: () => showBottomSheet(
+                    context: context,
+                    builder: (context) {
+                      return Container(
+                        margin: EdgeInsets.symmetric(horizontal: size.width*0.05),
+                        child: SizedBox(
+                          height: size.height*0.45,
+                          child: SfDateRangePicker(
+                            onSelectionChanged: _onSelectionChanged,
+                            selectionMode: DateRangePickerSelectionMode.range,
+                          ),
+                        ),
+                      );
+                    }
+                  ),
+                  icon: Icon(Icons.date_range),
+                ),
+              ],
             )
+            
           ],
         ),
       ),
