@@ -1,21 +1,21 @@
 import 'package:dio/dio.dart';
 
-List<String> getParties () {
+Future<List<String>?> getParties () async {
 
   var parties = <String>[];
-  var data;
 
-  Dio().get("http://192.168.43.129:8000/api/v1/parties")
-  .then((res) => {
+  try {
+    var response = await Dio().get("http://192.168.43.129:8000/api/v1/parties");
+    var data = response.data;
 
-    data = res.data,
-    print("data ${data} ${data.runtimeType} ${data.length}"),
-
-    for (var i = 0; i < data.length; i++) {
-      parties.add(data[i].toString())
-    },
-
-  });
-
-  return parties;
+    for ( var i = 0; i < data.length; i++){
+      parties.add(data[i]);
+    }
+    
+    return parties;
+  } catch (err) {
+    print(err);
+    return null;
+  }
+  
 }
