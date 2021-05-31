@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 
 Future<List<String>?> getParties () async {
 
@@ -18,4 +19,23 @@ Future<List<String>?> getParties () async {
     return null;
   }
   
+}
+
+List<DropdownMenuItem<String>>? getParties2 () {
+  
+  var parties;
+
+  Dio().get("http://192.168.43.129:8000/api/v1/parties")
+  .then((response) {
+    var data = response.data;
+    for(var i = 0; i < data.length; i++) {
+      data[i] = DropdownMenuItem(
+        child: Text(data[i].toString()),
+        value: data[i].toString()
+      );
+    }
+    parties = data;
+  });
+
+  return parties;
 }
