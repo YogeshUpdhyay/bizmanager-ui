@@ -25,7 +25,6 @@ class _SalesState extends State<Sales> {
 
   void _onSelectionChanged(DateRangePickerSelectionChangedArgs args) {
     // TODO: implement your code here
-    // args.value;
     print("${args.value.startDate} to ${args.value.endDate}");
     setState(() {
       _startDate = args.value.startDate;
