@@ -1,5 +1,6 @@
 import 'package:bizmanager/controller/parties.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 import 'components/daterangesales.dart';
 import 'components/dropdownsales.dart';
@@ -50,17 +51,44 @@ class _SalesState extends State<Sales> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 10.0,),
-            DropDownComponent(changeFunc: _changeFunc, chosenValue: chosenValue, future: _future,),
+            DropDownComponent(
+              changeFunc: _changeFunc, 
+              chosenValue: chosenValue, 
+              future: _future,
+            ),
             SizedBox(height: 10.0,),
-            DateRangeComp(endDate: _endDate, startDate: _startDate,onSelectionChanged: _onSelectionChanged,)
-            
+            DateRangeComp(
+              endDate: _endDate, 
+              startDate: _startDate,
+              onSelectionChanged: _onSelectionChanged,
+            )
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.add),
-      ),
+      floatingActionButton: SpeedDial(
+        backgroundColor: Colors.yellow,
+        animatedIcon: AnimatedIcons.menu_close,
+        children: [
+          SpeedDialChild(
+            child: Icon(Icons.add),
+            label: "Add Sale",
+            onTap: () => print("Add Sales"),
+            backgroundColor: Colors.green
+          ),
+          SpeedDialChild(
+            child: Icon(Icons.payment),
+            label: "Payment In",
+            onTap: () => print("payment"),
+            backgroundColor: Colors.blue
+          ),
+          SpeedDialChild(
+            child: Icon(Icons.upload),
+            label: "Sale Return",
+            onTap: () => print("Sale return"),
+            backgroundColor: Colors.red
+          ),
+        ],
+      )
     );
   }
 }
