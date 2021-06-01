@@ -36,7 +36,7 @@ class Login extends StatelessWidget {
                 TextFieldComponent(prefixIcon: Icons.lock, labelText: "Password", obsText: true),
                 SizedBox(height: 10.0),
                 MaterialButton(
-                  onPressed: () {}, 
+                  onPressed: () => Navigator.of(context).pushReplacementNamed("/dashboard"), 
                   child: Text(
                     "Submit",
                     style: TextStyle(
@@ -49,7 +49,6 @@ class Login extends StatelessWidget {
                   height: size.height*0.06,
                   minWidth: size.width*0.9,
                   elevation: 10.0,
-
                 ),
                 SizedBox(height: 40,),
                 Divider(color: Colors.black, thickness: 2,),

@@ -1,4 +1,8 @@
+import 'package:bizmanager/views/dashboard.dart';
+import 'package:bizmanager/views/landing.dart';
+import 'package:bizmanager/views/login.dart';
 import 'package:bizmanager/views/mainview.dart';
+import 'package:bizmanager/views/signup.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,21 +17,15 @@ class MyApp extends StatelessWidget {
       title: 'bizmanager',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        // inputDecorationTheme: InputDecorationTheme(
-        //   labelStyle: TextStyle(
-        //     color: Colors.black
-        //   ),
-        //   floatingLabelBehavior: FloatingLabelBehavior.never,
-        //   border: OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
-        //   enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
-        //   focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
-        // )
       ),
-      // initialRoute: "/",
-      // routes: {
-      //   '/': (context) => Login()
-      // },
-      home: MainView(),
+      initialRoute: "/",
+      routes: {
+        '/': (context) => Landing(),
+        '/login': (context) => Login(),
+        '/register': (context) => Register(),
+        '/dashboard': (context) =>  Dashboard(),
+      },
+      // home: MainView(),
     );
   }
 }
