@@ -1,7 +1,6 @@
 import 'package:bizmanager/views/dashboard.dart';
 import 'package:bizmanager/views/landing.dart';
 import 'package:bizmanager/views/login.dart';
-import 'package:bizmanager/views/mainview.dart';
 import 'package:bizmanager/views/signup.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +24,6 @@ class MyApp extends StatelessWidget {
         '/register': (context) => Register(),
         '/dashboard': (context) =>  Dashboard(),
       },
-      // home: MainView(),
     );
   }
 }

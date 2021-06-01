@@ -61,6 +61,7 @@ class _SalesState extends State<Sales> {
               endDate: _endDate, 
               startDate: _startDate,
               onSelectionChanged: _onSelectionChanged,
+              buttonColor: Colors.yellow,
             )
           ],
         ),
@@ -87,6 +88,12 @@ class _SalesState extends State<Sales> {
             onTap: () => print("Sale return"),
             backgroundColor: Colors.red
           ),
+          SpeedDialChild(
+            child: Icon(Icons.picture_as_pdf),
+            label: "Export",
+            onTap: () => print("export to pdf"),
+            backgroundColor: Colors.orangeAccent
+          )
         ],
       )
     );

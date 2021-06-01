@@ -7,8 +7,9 @@ class DateRangeComp extends StatelessWidget {
   final startDate;
   final endDate;
   final onSelectionChanged;
+  final buttonColor;
 
-  const DateRangeComp({Key? key, this.startDate, this.endDate, this.onSelectionChanged}) : super(key: key);
+  const DateRangeComp({Key? key, this.startDate, this.endDate, this.onSelectionChanged, this.buttonColor}) : super(key: key);
 
 
   @override
@@ -19,17 +20,15 @@ class DateRangeComp extends StatelessWidget {
     return Row(
       children: [
         Text(
-          startDate != null ? DateFormat('yyyy-MM-dd').format(startDate) : "Start Date",
+          startDate != null ? DateFormat('yyyy-MM-dd').format(startDate) : DateFormat('yyyy-MM-dd').format(DateTime.now()),
           style: TextStyle(
             fontFamily: "OpenSans",
             fontSize: 16
           ),
         ),
-        SizedBox(width: 5,),
         Icon(Icons.arrow_right),
-        SizedBox(width: 5,),
         Text(
-          endDate != null ? DateFormat('yyyy-MM-dd').format(endDate) : "End Date",
+          endDate != null ? DateFormat('yyyy-MM-dd').format(endDate) : DateFormat('yyyy-MM-dd').format(DateTime.now().subtract(const Duration(days: 90))),
           style: TextStyle(
             fontFamily: "OpenSans",
             fontSize: 16
@@ -86,7 +85,7 @@ class DateRangeComp extends StatelessWidget {
                 ),
               ],
             ),
-            color: Colors.yellow,
+            color: buttonColor,
           ),
         )
       ],
