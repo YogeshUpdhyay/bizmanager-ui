@@ -50,11 +50,10 @@ class Login extends StatelessWidget {
                 SizedBox(height: 10.0),
                 MaterialButton(
                   onPressed: () {
-                    print("here");
                     print(emailController.text);
                     print(pswdController.text);
-                    
-                  } , 
+                    Navigator.pushReplacementNamed(context, "/dashboard");
+                  }, 
                   child: Text(
                     "Submit",
                     style: TextStyle(

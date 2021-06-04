@@ -26,7 +26,8 @@ class MyApp extends StatelessWidget {
         '/register': (context) => Register(),
         '/dashboard': (context) =>  Dashboard(),
         '/addbusiness': (context) => Business(),
-        '/forgotpass': (context) => ForgotPassword()
+        '/forgotpass': (context) => ForgotPassword(),
+        
       },
     );
   }
