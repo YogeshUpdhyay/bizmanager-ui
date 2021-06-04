@@ -71,7 +71,7 @@ class Login extends StatelessWidget {
                 SizedBox(height: 40,),
                 Divider(color: Colors.black, thickness: 2,),
                 TextButton(
-                  onPressed: () => Navigator.pushNamed(context, "/forgotpassword"), 
+                  onPressed: () => Navigator.pushNamed(context, "/forgotpass"), 
                   child: Text("Forgot Password", style: TextStyle(fontFamily: "OpenSans", color: Colors.black),),
                 ),
                 TextButton(

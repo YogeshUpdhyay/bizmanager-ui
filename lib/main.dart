@@ -1,5 +1,6 @@
 import 'package:bizmanager/views/business.dart';
 import 'package:bizmanager/views/dashboard.dart';
+import 'package:bizmanager/views/forgotpassword.dart';
 import 'package:bizmanager/views/landing.dart';
 import 'package:bizmanager/views/login.dart';
 import 'package:bizmanager/views/signup.dart';
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
         '/login': (context) => Login(),
         '/register': (context) => Register(),
         '/dashboard': (context) =>  Dashboard(),
-        '/addbusiness': (context) => Business()
+        '/addbusiness': (context) => Business(),
+        '/forgotpass': (context) => ForgotPassword()
       },
     );
   }
