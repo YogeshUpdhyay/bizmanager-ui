@@ -2,6 +2,9 @@ import 'package:bizmanager/views/components/textfield.dart';
 import 'package:flutter/material.dart';
 
 class AddEmployee extends StatelessWidget {
+
+  final nameController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
 
@@ -26,6 +29,7 @@ class AddEmployee extends StatelessWidget {
             prefixIcon: Icons.search, 
             labelText: "Username/Email", 
             obsText: false,
+            controller: nameController,
           ),
           SizedBox(height: 10.0,),
           ListTile(

@@ -44,6 +44,11 @@ class DrawerComponent extends StatelessWidget {
       ),
       SizedBox(height: 10.0,),
       ListTile(
+        leading: Icon(Icons.logout),
+        title: Text("Logout", style: TextStyle(fontFamily: "OpenSans", fontSize: 16),),
+        onTap: () => Navigator.pushReplacementNamed(context, "/")
+      ),
+      ListTile(
         leading: Icon(Icons.settings),
         title: Text("Settings", style: TextStyle(fontFamily: "OpenSans", fontSize: 16)),
         onTap: () => print("settings"),
@@ -109,7 +114,7 @@ class DrawerComponent extends StatelessWidget {
             fontSize: 16
           ),
         ),
-        onTap: () => print("Add new business"),
+        onTap: () => Navigator.pushNamed(context, "/addbusiness"),
       )
     ]);    
 

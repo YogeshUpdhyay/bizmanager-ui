@@ -3,6 +3,11 @@ import 'components/customPaint.dart';
 import 'components/textfield.dart';
 
 class Register extends StatelessWidget {
+
+  TextEditingController userController = new TextEditingController();
+  TextEditingController emailController = new TextEditingController();
+  TextEditingController pswdController = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -29,14 +34,14 @@ class Register extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 10.0,),
-                TextFieldComponent(prefixIcon: Icons.verified_user, labelText: "Username", obsText: false),
+                TextFieldComponent(prefixIcon: Icons.verified_user, labelText: "Username", obsText: false, controller: userController,),
                 SizedBox(height: 10.0,),
-                TextFieldComponent(prefixIcon: Icons.email_rounded, labelText: "Email", obsText: false),
+                TextFieldComponent(prefixIcon: Icons.email_rounded, labelText: "Email", obsText: false, controller: emailController,),
                 SizedBox(height: 10.0,),
-                TextFieldComponent(prefixIcon: Icons.lock, labelText: "Password", obsText: true),
+                TextFieldComponent(prefixIcon: Icons.lock, labelText: "Password", obsText: true, controller: pswdController,),
                 SizedBox(height: 10.0,),
                 MaterialButton(
-                  onPressed: () {}, 
+                  onPressed: () => Navigator.pushNamed(context, "/dashboard"), 
                   child: Text(
                     "Submit",
                     style: TextStyle(
@@ -54,7 +59,7 @@ class Register extends StatelessWidget {
                 Divider(color: Colors.black, thickness: 2,),
                 TextButton(
                   onPressed: () => Navigator.pushReplacementNamed(context, "/login"), 
-                  child: Text("Already have an account? Login")
+                  child: Text("Already have an account? Login", style: TextStyle(fontFamily: "OpenSans", color: Colors.black),)
                 )
 
               ],

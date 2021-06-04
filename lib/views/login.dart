@@ -4,6 +4,9 @@ import 'components/customPaint.dart';
 
 class Login extends StatelessWidget {
 
+  TextEditingController emailController = new TextEditingController();
+  TextEditingController pswdController = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -31,12 +34,27 @@ class Login extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 10.0,),
-                TextFieldComponent(prefixIcon: Icons.email_rounded, labelText: "Email", obsText: false),
+                TextFieldComponent(
+                  prefixIcon: Icons.email_rounded, 
+                  labelText: "Email", 
+                  obsText: false,
+                  controller: emailController,
+                ),
                 SizedBox(height: 10.0,),
-                TextFieldComponent(prefixIcon: Icons.lock, labelText: "Password", obsText: true),
+                TextFieldComponent(
+                  prefixIcon: Icons.lock, 
+                  labelText: "Password", 
+                  obsText: true,
+                  controller: pswdController,
+                ),
                 SizedBox(height: 10.0),
                 MaterialButton(
-                  onPressed: () => Navigator.of(context).pushReplacementNamed("/dashboard"), 
+                  onPressed: () {
+                    print("here");
+                    print(emailController.text);
+                    print(pswdController.text);
+                    
+                  } , 
                   child: Text(
                     "Submit",
                     style: TextStyle(
@@ -53,8 +71,12 @@ class Login extends StatelessWidget {
                 SizedBox(height: 40,),
                 Divider(color: Colors.black, thickness: 2,),
                 TextButton(
-                  onPressed: () => Navigator.pushReplacementNamed(context, "/register"), 
-                  child: Text("Don't have an account? Register")
+                  onPressed: () => Navigator.pushNamed(context, "/forgotpassword"), 
+                  child: Text("Forgot Password", style: TextStyle(fontFamily: "OpenSans", color: Colors.black),),
+                ),
+                TextButton(
+                  onPressed: () => Navigator.pushNamed(context, "/register"), 
+                  child: Text("Don't have an account? Register", style: TextStyle(fontFamily: "OpenSans", color: Colors.black),)
                 )
               ],
             ),

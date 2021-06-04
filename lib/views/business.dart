@@ -10,6 +10,13 @@ class Business extends StatefulWidget {
 }
 
 class _BusinessState extends State<Business> {
+
+  final nameController = TextEditingController();
+  final addrController = TextEditingController();
+  final emailController = TextEditingController();
+  final descController = TextEditingController();
+  final phoneController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
 
@@ -55,15 +62,15 @@ class _BusinessState extends State<Business> {
                 ),
               ),
               SizedBox(height: 10.0,),
-              TextFieldComponent(prefixIcon: Icons.business, labelText: "Name", obsText: false),
+              TextFieldComponent(prefixIcon: Icons.business, labelText: "Name", obsText: false, controller: nameController,),
               SizedBox(height: 10.0,),
-              TextFieldComponent(prefixIcon: Icons.place, labelText: "Address", obsText: false),
+              TextFieldComponent(prefixIcon: Icons.place, labelText: "Address", obsText: false, controller: addrController,),
               SizedBox(height: 10.0),
-              TextFieldComponent(prefixIcon: Icons.email, labelText: "Email", obsText: false),
+              TextFieldComponent(prefixIcon: Icons.email, labelText: "Email", obsText: false, controller: emailController,),
               SizedBox(height: 10.0,),
-              TextFieldComponent(prefixIcon: Icons.description, labelText: "GST", obsText: false),
+              TextFieldComponent(prefixIcon: Icons.description, labelText: "GST", obsText: false, controller: descController,),
               SizedBox(height: 10.0,),
-              TextFieldComponent(prefixIcon: Icons.phone, labelText: "Contact No.", obsText: false),
+              TextFieldComponent(prefixIcon: Icons.phone, labelText: "Contact No.", obsText: false, controller: phoneController,),
               SizedBox(height: 10.0,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

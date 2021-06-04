@@ -4,17 +4,20 @@ class TextFieldComponent extends StatelessWidget {
   final IconData prefixIcon;
   final String labelText;
   final bool obsText;
+  final TextEditingController controller;
 
   const TextFieldComponent({
     Key? key, 
     required this.prefixIcon, 
     required this.labelText, 
-    required this.obsText
+    required this.obsText, 
+    required this.controller
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: this.controller,
       decoration: InputDecoration(
         labelText: this.labelText,
         prefixIcon: Icon(this.prefixIcon, color: Colors.black),
