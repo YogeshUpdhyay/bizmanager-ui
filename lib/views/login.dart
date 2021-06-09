@@ -4,8 +4,8 @@ import 'components/customPaint.dart';
 
 class Login extends StatelessWidget {
 
-  TextEditingController emailController = new TextEditingController();
-  TextEditingController pswdController = new TextEditingController();
+  final emailController = new TextEditingController();
+  final pswdController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
