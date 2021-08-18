@@ -55,6 +55,8 @@ class Welcome {
     required this.contactNo,
     required this.creator,
     required this.employess,
+    required this.logo,
+    required this.gst
   });
 
   String id;
@@ -63,6 +65,8 @@ class Welcome {
   String contactNo;
   Creator creator;
   List<dynamic> employess;
+  final String logo;
+  final String gst;
 
   Welcome.fromJson(Map<String, dynamic> json)
     : id = json["id"],
@@ -70,7 +74,9 @@ class Welcome {
       address = json["address"],
       contactNo = json["contact_no"],
       creator = Creator.fromJson(json["creator"]),
-      employess = List<dynamic>.from(json["employess"].map((x) => x));
+      employess = List<dynamic>.from(json["employess"].map((x) => x)),
+      logo = json["logo"],
+      gst = json["gst"];
 
   Map<String, dynamic> toJson() => {
     "id": id,
@@ -79,6 +85,8 @@ class Welcome {
     "contact_no": contactNo,
     "creator": creator.toJson(),
     "employess": List<dynamic>.from(employess.map((x) => x)),
+    "logo": logo,
+    "gst": gst
   };
 }
 
