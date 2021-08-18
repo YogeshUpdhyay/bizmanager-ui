@@ -24,8 +24,61 @@
         }
     ],
     "/api/v1/parties": [
-        "Party1",
-        "Party2",
-        "Party3"
-    ]
+        {
+            "id": "611bdecdfce5836d7b8742fb",
+            "name": "string",
+            "business": {
+                "id": "611bdbc9758caf4c9f489f3d",
+                "name": "DEV.il",
+                "address": "Somewhere far away",
+                "contact_no": "9920064375",
+                "creator": {
+                "id": "611bdabc758caf4c9f489f3c",
+                "name": "Yogesh Upadhyay",
+                "email": "user@example.com"
+                },
+                "employess": []
+            },
+            "address": "string",
+            "contactNo": "string",
+            "email": "user@example.com",
+            "account": {
+                "ifsc": "string",
+                "ac_no": "string"
+            },
+            "type": "string"
+        },
+        {
+            "id": "611bded7fce5836d7b8742fc",
+            "name": "string",
+            "business": {
+                "id": "611bdbc9758caf4c9f489f3d",
+                "name": "DEV.il",
+                "address": "Somewhere far away",
+                "contact_no": "9920064375",
+                "creator": {
+                "id": "611bdabc758caf4c9f489f3c",
+                "name": "Yogesh Upadhyay",
+                "email": "user@example.com"
+                },
+                "employess": []
+            },
+            "address": "string",
+            "contactNo": "string",
+            "email": "user@example.com",
+            "account": {
+                "ifsc": "string",
+                "ac_no": "string"
+            },
+            "type": "string"
+        }
+    ],
+    "/api/v1/stats": {
+        "orders": {
+            "total": 10,
+            "completed": 8
+        },
+        "collectables": 150000,
+        "outstanding": 456200
+    }
   }
